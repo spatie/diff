@@ -13,8 +13,8 @@ class ArrayDiffer implements TypeDiffer
     }
 
     /**
-     * @param array $first
-     * @param array $second
+     * @param  array  $first
+     * @param  array  $second
      */
     public function diff($first, $second): DiffResult
     {
