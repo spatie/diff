@@ -13,5 +13,5 @@ it('can diff two arrays', function () {
 
     $renderedResult = $result->render(new SimpleRenderer());
 
-    dd($renderedResult);
+    expect($renderedResult)->toMatchSnapshot();
 });
