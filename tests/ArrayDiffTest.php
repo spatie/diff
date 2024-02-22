@@ -3,7 +3,7 @@
 use Spatie\Diff\Differ;
 use Spatie\Diff\Renderers\SimpleRenderer;
 
-it('can detect the same array', function() {
+it('can detect the same array', function () {
     $differ = new Differ();
 
     $result = $differ->diff(
