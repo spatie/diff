@@ -3,7 +3,20 @@
 use Spatie\Diff\Differ;
 use Spatie\Diff\Renderers\SimpleRenderer;
 
-it('can diff two arrays', function () {
+it('can detect the same array', function() {
+    $differ = new Differ();
+
+    $result = $differ->diff(
+        ['a' => 1, 'b' => 2, 'c' => 3],
+        ['a' => 1, 'b' => 2, 'c' => 3],
+    );
+
+    $renderedResult = $result->render(new SimpleRenderer());
+
+    expect($renderedResult)->toBe('');
+});
+
+it('can detect changes in two simple arrays', function () {
     $differ = new Differ();
 
     $result = $differ->diff(
