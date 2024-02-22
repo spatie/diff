@@ -6,7 +6,6 @@ use Spatie\Diff\DiffResult;
 
 class ScalarDiffer implements TypeDiffer
 {
-
     public function canDiff(mixed $first, mixed $second): bool
     {
         return is_scalar($first) && is_scalar($second);
