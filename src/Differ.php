@@ -32,7 +32,7 @@ class Differ
 
     protected function determineTypeDiffer(mixed $first, mixed $second): ?TypeDiffer
     {
-        foreach($this->differs as $differClass) {
+        foreach ($this->differs as $differClass) {
             $differClass = new $differClass;
 
             if ($differClass->candiff($first, $second)) {

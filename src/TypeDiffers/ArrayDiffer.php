@@ -13,21 +13,19 @@ class ArrayDiffer implements TypeDiffer
     }
 
     /**
-     * @param array $first
-     * @param array $second
-     *
-     * @return \Spatie\Diff\DiffResult
+     * @param  array  $first
+     * @param  array  $second
      */
     public function diff($first, $second): DiffResult
     {
         $diffResult = new DiffResult($first, $second);
 
-        foreach(array_diff_key($second, $first) as $key => $value) {
-           $diffResult->add(DiffResultLineType::Added, $key, $value);
+        foreach (array_diff_key($second, $first) as $key => $value) {
+            $diffResult->add(DiffResultLineType::Added, $key, $value);
         }
 
-        foreach(array_diff_key($first, $second) as $key => $value) {
-           $diffResult->add(DiffResultLineType::Removed, $key, $value);
+        foreach (array_diff_key($first, $second) as $key => $value) {
+            $diffResult->add(DiffResultLineType::Removed, $key, $value);
         }
 
         foreach ($first as $key => $value) {
