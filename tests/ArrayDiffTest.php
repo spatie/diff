@@ -28,3 +28,16 @@ it('can detect changes in two simple arrays', function () {
 
     expect($renderedResult)->toMatchSnapshot();
 });
+
+it('can handle non-associative arrays', function () {
+    $differ = new Differ();
+
+    $result = $differ->diff(
+        [1, 2, 4],
+        [1, 2, 3, 4],
+    );
+
+    $renderedResult = $result->render(new SimpleRenderer());
+
+    expect($renderedResult)->toMatchSnapshot();
+});

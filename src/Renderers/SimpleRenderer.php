@@ -11,7 +11,9 @@ class SimpleRenderer implements Renderer
     public function render(DiffResult $diffResult): string
     {
         $stringLines = array_map(function (DiffResultLine $line) {
-            $string = "{$this->getSymbol($line->type)} {$line->key} => {$this->toString($line->value)}";
+            $key = ' ' . $line->key ?? '';
+
+            $string = "{$this->getSymbol($line->type)}{$key} => {$this->toString($line->value)}";
 
             if ($line->oldValue !== null) {
                 $string .= " (from {$this->toString($line->oldValue)})";

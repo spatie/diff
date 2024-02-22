@@ -19,7 +19,7 @@ class DiffResult
 
     public function add(
         DiffResultLineType $type,
-        string $key,
+        ?string $key,
         mixed $value,
         mixed $oldValue = null
     ): self {

@@ -8,7 +8,7 @@ class DiffResultLine
 {
     public function __construct(
         public DiffResultLineType $type,
-        public string $key,
+        public ?string $key,
         public mixed $value,
         public mixed $oldValue = null,
     ) {

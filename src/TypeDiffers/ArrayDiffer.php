@@ -13,10 +13,32 @@ class ArrayDiffer implements TypeDiffer
     }
 
     /**
-     * @param  array  $first
-     * @param  array  $second
+     * @param array $first
+     * @param array $second
      */
     public function diff($first, $second): DiffResult
+    {
+        return $this->isIndexed($first) || $this->isIndexed($second)
+            ? $this->diffIndexedArray($first, $second)
+            : $this->diffAssociativeArray($first, $second);
+    }
+
+    public function diffIndexedArray(array $first, array $second): DiffResult
+    {
+        $diffResult = new DiffResult($first, $second);
+
+        foreach (array_diff($second, $first) as $value) {
+            $diffResult->add(DiffResultLineType::Added, null, $value);
+        }
+
+        foreach (array_diff($first, $second) as $value) {
+            $diffResult->add(DiffResultLineType::Removed, null, $value);
+        }
+
+        return $diffResult;
+    }
+
+    public function diffAssociativeArray(array $first, array $second): DiffResult
     {
         $diffResult = new DiffResult($first, $second);
 
@@ -38,5 +60,10 @@ class ArrayDiffer implements TypeDiffer
 
         return $diffResult;
 
+    }
+
+    protected function isIndexed(array $array): bool
+    {
+        return array_values($array) === $array;
     }
 }
