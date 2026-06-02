@@ -1,7 +1,7 @@
 # Compare stuff in PHP
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/diff.svg?style=flat-square)](https://packagist.org/packages/spatie/diff)
-[![Tests](https://img.shields.io/github/actions/workflow/status/spatie/diff/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/spatie/diff/actions/workflows/run-tests.yml)
+[![Tests](https://github.com/spatie/diff/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/diff/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/diff.svg?style=flat-square)](https://packagist.org/packages/spatie/diff)
 
 This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
