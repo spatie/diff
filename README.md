@@ -31,6 +31,8 @@ echo $skeleton->echoPhrase('Hello, Spatie!');
 
 ## Testing
 
+The package requires PHP 8.3 or higher. Installing development dependencies and running the Pest 5 test suite requires PHP 8.4 or higher.
+
 ```bash
 composer test
 ```
